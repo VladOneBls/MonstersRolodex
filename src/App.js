@@ -1,6 +1,7 @@
 import { Component } from 'react'; // a React class that allows all of the new components that we write in a class component format to get access to some of the functionalities that by default React has already built for us inside of this Component class
 
 import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-box/search-box.component';
 import './App.css';
 
 class App extends Component {
@@ -43,12 +44,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input 
-          className='search-box' 
-          type='search' 
+        <SearchBox 
+          className='search-box'
+          onChangeHandler={onSearchChange} 
           placeholder='search monsters' 
-          onChange={onSearchChange}
         />
+
         <CardList monsters={filteredMonsters} />
       </div>
     );
